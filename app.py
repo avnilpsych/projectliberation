@@ -8,7 +8,7 @@ socketio = SocketIO(app, cors_allowed_origins="*")
 def index():
     return "Chat server is running."
 
-@app.route('/chat')
+@app.route('/chat', methods=['GET'])
 def chat():
     # index.html must be inside the "templates" folder
     return render_template('index.html')
