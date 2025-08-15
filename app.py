@@ -8,6 +8,11 @@ socketio = SocketIO(app, cors_allowed_origins="*")
 def index():
     return "Chat server is running."
 
+@app.route('/chat')
+def chat():
+    # index.html must be inside the "templates" folder
+    return render_template('index.html')
+
 # Event when a user sends a message
 @socketio.on('send_message')
 def handle_message(data):
